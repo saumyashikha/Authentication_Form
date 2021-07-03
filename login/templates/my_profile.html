@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+     <!-- bootstarp designs -->
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <!-- my designs -->
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% if messages %}
+     {% for message in messages %}
+     <div class="text-center my-4">
+      <small {% if message.tags %} class="alert alert-success text-center" {% endif %}>{{message}}</small>
+     </div> 
+     {% endfor %}
+    {% endif %}
+    <h2 class="text-center my-5 py-5">WELCOME</h2>
+    <div class="text-center">
+      <a href="{% url 'logout' %}" class="btn btn-success text-white">Logout</a>
+    </div>
+    
+
+     <!-- bootstarp js -->
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <!-- Jquery designs-->
+     <script src="{% static 'js/Jquery.js' %}"></script>
+</body>
+</html>

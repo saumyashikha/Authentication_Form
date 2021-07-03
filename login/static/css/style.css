@@ -1,0 +1,37 @@
+
+* {
+    font-family: "Times New Roman", Times, serif;
+    color: #fff;
+}
+body{
+    background-image: url(/static/images/bg.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+.d{
+    float: center;
+    text-align: center;
+}
+
+.bcolor{
+    box-shadow: -1px 1px 50px 10px black ;
+}
+.txt{
+    background: transparent;
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: 1px solid #fff;
+    color:#fff;
+}
+
+.txt:focus {
+    background-color: transparent;
+    outline: none;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.btn:hover{
+    border: 2px solid #fff;
+}

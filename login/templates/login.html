@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- bootstarp designs -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- my designs -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <br><br><br><br>
+    <div class="container">
+        <div class="row justify-content-center align-items-center text-white">
+            <div class="col-sm-4 col-md-4 bcolor">
+                <h2 class="text-center my-4">Login</h2>
+                <div class="form-group">
+                <form action="" method="post" novalidate>
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                      {% for error in form.non_field_errors %}
+                        <p class="alert alert-danger">{{error}}</p>
+                      {% endfor %}
+                    {% endif %}
+                        {% for fm in form %}
+                          {{fm}}<br>
+                          <small class="text-warning p-0">{{fm.errors|striptags}}</small>
+                        {% endfor %}
+                    <input type="submit" value="Login" class="btn btn-primary form-control">
+                    <p class='my-3 text-center'>Don't Have Account ? <a href="{% url 'signup' %}">Signup Now</a></p>  
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- bootstarp js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Jquery designs-->
+    <script src="{% static 'js/Jquery.js' %}"></script>
+</body>
+</html>
